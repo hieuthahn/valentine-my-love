@@ -11,7 +11,7 @@ type Screen = 'enter-pass-code' | 'counting-time' | 'our-journey' | 'heart-click
 
 const MainScreen = () => {
     const [screen, setScreen] = useState<Screen>('enter-pass-code')
-    const refAudio = useRef(null)
+    const refAudio = useRef<any>(null)
 
     useEffect(() => {
         const playAudio = () => refAudio?.current?.paused && refAudio?.current?.play()

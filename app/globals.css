@@ -2,32 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+.bgoverlay {
+    background: rgb(103, 58, 183);
+    background: #673ab6b3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.open .title {
+    opacity: 0;
+    transition: all 0.3s ease;
+    top: -100px;
+}
+
+.animate-explode {
+    animation: explode 4s infinite;
+}
+.animate-explodeSmall-3 {
+    animation: explodeSmall 3s infinite;
+}
+.animate-explodeSmall-2 {
+    animation: explodeSmall 2s infinite;
+}
+
+.open .animate-open {
+    animation: open 4s;
+    transform: scale(10);
+}
+
+.endtext {
+    opacity: 0;
+    position: absolute;
+    top: -100px;
+    width: 100%;
+}
+.open .endtext {
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    animation: show 3s;
+}
+.endtext .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+.endtext h1,
+.endtext h2,
+.endtext h3 {
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-weight: normal;
+}
+.endtext h1 {
+    font-size: 50px;
+}
+.endtext h2 {
+    font-size: 30px;
+}
+.endtext h3 {
+    font-size: 20px;
+}
+
+@keyframes explode {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+@keyframes explodeSmall {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes open {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(10);
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        top: -100px;
+    }
+    to {
+        opacity: 1;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }

@@ -1,8 +1,8 @@
 import dayjs from "dayjs"
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { motion } from "framer-motion"
-import Image from "next/image"
 import { useEffect, useState } from "react"
+import BlurImage from "./BlurImage"
 dayjs.extend(relativeTime)
 
 const CountingTime = ({ onChangeScreen }: { onChangeScreen: () => void }) => {
@@ -40,7 +40,7 @@ const CountingTime = ({ onChangeScreen }: { onChangeScreen: () => void }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }} className="m-4" >
             <div className="flex gap-4 items-center">
-                <Image priority
+                <BlurImage priority
                     placeholder="blur"
                     blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" src={'/avatar.jpeg'} alt='avatar' style={{ objectFit: 'cover', aspectRatio: 1 }} width={80} height={80} className="ring-2 ring-offset-2 ring-rose-400 rounded-full overflow-hidden" />
                 <div className="md:text-lg bg-white px-6 py-1 border-2 border-black/80 rounded-full flex items-center gap-2 font-semibold">

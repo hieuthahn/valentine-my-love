@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import Image from "next/image"
+import BlurImage from "./BlurImage"
 
 const OurJourney = ({ onChangeScreen }: { onChangeScreen: () => void }) => {
     const images = [
@@ -21,7 +21,7 @@ const OurJourney = ({ onChangeScreen }: { onChangeScreen: () => void }) => {
             <div className="border-2 border-black/70 rounded-lg bg-white">
                 <div className="text-center text-xl mt-2 mb-6 font-semibold">our journey</div>
                 <div className="flex flex-col items-center">
-                    <Image src={'/avatar.jpeg'} alt='avatar' style={{ objectFit: 'cover', aspectRatio: 1 }} width={150} height={150} className="text-center border-4 border-offset-2 border-slate-100 rounded-full overflow-hidden" />
+                    <BlurImage src={'/avatar.jpeg'} alt='avatar' style={{ objectFit: 'cover', aspectRatio: 1 }} width={150} height={150} className="text-center border-4 border-offset-2 border-slate-100 rounded-full overflow-hidden" />
                     <div className="mt-2 mb-1 font-semibold">@hhjniee_</div>
                 </div>
                 <div className="w-full border-t-2 border-b-2 divide-x-2 divide-black/70 py-1 border-t-black/70 border-b-black/70 grid grid-cols-3">
@@ -49,7 +49,7 @@ const OurJourney = ({ onChangeScreen }: { onChangeScreen: () => void }) => {
                                 Your browser does not support the video tag.
                             </video>
                             : (
-                                <Image
+                                <BlurImage
                                     priority
                                     placeholder="blur"
                                     blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="

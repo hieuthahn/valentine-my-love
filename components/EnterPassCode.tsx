@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
-import Image from "next/image"
 import { useState } from "react"
+import BlurImage from "./BlurImage"
 
 const EnterPassCode = ({ onSuccess }: { onSuccess: () => void }) => {
     const keys = [1, 2, 3, 4, 5, 6, 7, 8, 9, "*", 0, '#']
@@ -14,7 +14,7 @@ const EnterPassCode = ({ onSuccess }: { onSuccess: () => void }) => {
         <motion.div initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }} className="m-4 p-4 grid gap-6 flex-wrap grid-cols-1 md:grid-cols-2 border-2 rounded-xl border-black/80">
-            <Image priority
+            <BlurImage priority
                 placeholder="blur"
                 blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" className="rounded-xl" src={'/cat-couple.jpeg'} width={320} height={320} alt={"cat-couple"} />
             <div className=" md:px-6 gap-6 flex flex-col items-center flex-1">

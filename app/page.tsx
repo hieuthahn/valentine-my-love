@@ -6,7 +6,7 @@ export default function Home() {
       backgroundImage: "url('./bg.jpeg')",
       backgroundRepeat: 'repeat',
       backgroundPosition: 'center',
-    }} className="flex min-h-dvh w-dvw flex-col items-center justify-center">
+    }} className="flex min-h-dvh h-vh min-w-dvw w-vw flex-col items-center justify-center">
       <MainScreen />
     </main>
   );
